@@ -1,0 +1,1 @@
+val evenNums1 = nums.filter { num -> num % 2 == 0 }

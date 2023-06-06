@@ -1,0 +1,1 @@
+fun square(num: Int) = num * num
