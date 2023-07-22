@@ -1,0 +1,16 @@
+// Add Hilt Android Gradle plugin
+plugins {
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    // ...
+}
+
+android {
+    // ...
+}
+
+dependencies {
+    implementation "com.google.dagger:hilt-android:latest_version"
+    kapt "com.google.dagger:hilt-android-compiler:latest_version"
+    // ...
+}
