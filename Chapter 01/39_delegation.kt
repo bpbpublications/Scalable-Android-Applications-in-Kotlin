@@ -17,8 +17,7 @@ class MyDelegate {
         thisRef: Any?,
         property: KProperty<*>,
         value: String
-    ) {
-        // Custom logic for property set
+    ) { // Custom logic for property set
         println("Setting value: $value")
     }
 }
