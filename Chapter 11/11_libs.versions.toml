@@ -1,0 +1,12 @@
+[versions]
+...
+hilt = "<latest>"
+
+[libraries]
+...
+dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+[plugins]
+...
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
