@@ -1,0 +1,2 @@
+@HiltAndroidApp
+class HiltApplication: Application()

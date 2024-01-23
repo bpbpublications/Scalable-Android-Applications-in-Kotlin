@@ -1,0 +1,3 @@
+ktorClient = HttpClient(mockEngine) {
+    ...
+}

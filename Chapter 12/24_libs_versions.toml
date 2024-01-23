@@ -1,0 +1,14 @@
+[versions]
+...
+junit = "4.13.2"
+ktor = "2.3.7"
+coTest = "1.7.0"
+
+[libraries]
+...
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ktor-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+coTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coTest" }
+
+[plugins]
+...

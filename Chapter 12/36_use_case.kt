@@ -1,0 +1,1 @@
+class MarsEstateSaleUseCase(marsRepository: MarsRepository)

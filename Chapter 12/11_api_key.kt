@@ -1,0 +1,1 @@
+val resp: HttpResponse = ktorClient.get("$marsUrl?apiKey=$apiKey")

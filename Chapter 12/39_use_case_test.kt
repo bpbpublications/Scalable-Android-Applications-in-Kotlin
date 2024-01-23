@@ -1,0 +1,3 @@
+...
+// When
+sut().onSuccess { }
