@@ -1,6 +1,7 @@
 interface CartRepository {
     fun getCart(): Cart
-    fun updateCart(updatedCart: Unit)
+    fun updateCart(updatedCart: Any): Result<Response> =
+        Result.success(object : Response{})
 }
 
 interface ProductRepository {

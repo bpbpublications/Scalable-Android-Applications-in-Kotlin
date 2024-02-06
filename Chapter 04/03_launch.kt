@@ -21,7 +21,7 @@ val productRepo = object : ProductRepository {
 fun main(args: Array<String>) {
 
     GlobalScope.launch {
-        val addToCartUseCase = addToCartUseCaseFactory(cartRepo, productRepo)
-        addToCartUseCase("productId", 3)
+        val addToCartUseCase = AddToCartUseCase(cartRepo, productRepo)
+        addToCartUseCase("productId", 3).onFailure { /* Do something */ }
     }
 }
