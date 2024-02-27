@@ -1,0 +1,2 @@
+fullScreenNavController.navigate(fullscreen1)
+scaffoldNavController.navigate(screenInScaffold2)
