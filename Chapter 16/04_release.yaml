@@ -1,0 +1,39 @@
+name: Release Build
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      KEYSTOREPASS: ${{ secrets.KEYSTOREPASS }}
+      KEYSTOREALIAS: ${{ secrets.KEYSTORE_ALIAS }}
+      KEYSTOREPATH: ./keystore.jks
+
+    steps:
+      – name: Checkout code
+        uses: actions/checkout@v2
+
+      – name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: ‘adopt’
+          java-version: ‘17’
+
+      – name: Decode Keystore and set env variable
+        run: |
+          echo “${{ secrets.KEYSTORE }}” | base64 –decode > ${{ env.KEYSTOREPATH }}
+          echo “KEYSTOREFILE=$(realpath ${{ env.KEYSTOREPATH }})” >> $GITHUB_ENV
+
+      – name: Build Release
+        run: gradle assembleRelease
+
+      – name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-release
+          path: app/build/outputs/apk/release/app-release.apk
